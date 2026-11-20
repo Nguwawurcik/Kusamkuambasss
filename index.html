@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ruang Cerita</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="gate" class="hidden">
+  <div class="gate-box">
+    <h2>🔒 Ruang Cerita</h2>
+    <p>Masukkan password admin untuk masuk.</p>
+    <input type="password" id="gatePass" placeholder="Password...">
+    <div id="gateErr" class="gate-err hidden">Password salah, coba lagi.</div>
+    <button id="gateBtn">Masuk</button>
+  </div>
+</div>
+
+<div id="app" class="hidden">
+<header>
+  <h1>Ruang <span>Cerita</span></h1>
+  <button class="secondary" id="newBtn">+ Cerita Baru</button>
+</header>
+
+<main>
+  <div id="listView"></div>
+
+  <div id="editor" class="hidden">
+    <span class="backlink" onclick="goList()">&larr; Kembali</span>
+    <input type="text" id="f_title" placeholder="Judul cerita...">
+    <input type="text" id="f_tags" placeholder="Tag (pisahkan koma, misal: horor, drama)">
+    <textarea id="f_body" placeholder="Tulis ceritamu di sini..."></textarea>
+    <div class="toolbar">
+      <button class="ghost" onclick="deleteCurrent()">Hapus</button>
+      <button class="secondary" onclick="goList()">Batal</button>
+      <button onclick="saveStory()">Simpan & Publikasikan</button>
+    </div>
+  </div>
+
+  <div id="reader" class="hidden"></div>
+</main>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
